@@ -17,6 +17,7 @@ button:hover{
  .game-container{
     max-width: 200vh;
     height: 90vh;
+
     display: flex;
     flex-direction: row;
     justify-content: end;
@@ -26,22 +27,43 @@ button:hover{
    row-gap: 0px;
 } 
 
-#road{
-    
+/* @media screen and(max-width:1084px) {
+    .background{
+        top: 100px;
+    }
+} */
+.background{
+    flex-wrap: wrap;
+
+   position: relative;
+    width: 100%;
+    height: 70%;
+    background-color: blueviolet;
+}
+#road {
     width: 100%;
     position: relative;
-   height: 40%;
+    height: 40%;
+    margin-top: -66px;
+    background-color: skyblue;
+    mix-blend-mode: multiply;
+}
+@media screen and(min-width:1924px) {
+    #road{
+        margin-top: -97px;
+    }
 }
 
 #car2{
     position: absolute;
     bottom: 160px;
     left: 35px;
+    z-index: 1;
     animation-name: road-Motion1;
     transition: 2s linear;
     animation-fill-mode: both;
     animation-duration: 13s;
-    animation-iteration-count:1 ;
+    animation-iteration-count:infinite ;
 }
 
 #car1{
@@ -52,11 +74,23 @@ button:hover{
     transition: 2s linear;
     animation-fill-mode: both;
     animation-duration: 11s;
-    animation-iteration-count:1 ;
+    animation-iteration-count:infinite ;
 }
 @keyframes road-Motion1 {
     from { transform: translateX(0vh);}
-    to{ transform: translateX(170vh);}
+    to{ transform: translateX(100vh);}
+}
+@media screen and (max-width:1020px) {
+    @keyframes road-Motion1 {
+        from { transform: translateX(0vh);}
+        to{ transform: translateX(50vh);}
+    }
+}
+@media screen and (max-width:660px) {
+    @keyframes road-Motion1 {
+        from { transform: translateX(0vh);}
+        to{ transform: translateX(30vh);}
+    }
 }
 #heading{
     /* transform: translateX(-60vh); */
@@ -65,16 +99,62 @@ button:hover{
     font-size: 50px;
     font-weight: 700;
 }
-#start1{
+.cloud{
     position: absolute;
-    bottom: 283px;
-    left: 155vh;
-    width: 10%;
+    flex-wrap: wrap;
+ 
 }
-#start2{
-    position: absolute;
-    z-index: 1;
-    bottom: 106px;
-    left: 155vh;
-    width: 10%;
+.cloud:nth-child(1){
+    width: 250px;
+    top: 82px;
+    left: 0px;
+    opacity: 70%;
+
+    animation: moving-cloud1 30s linear infinite;
 }
+.cloud:nth-child(2){
+    width: 300px;
+    top: 150px;
+    left: 500px;
+    opacity: 60%;
+    animation: moving-cloud2 20s linear infinite;
+}
+.cloud:nth-child(3){
+    width: 200px;
+    left: 300px;
+    opacity: 80%;
+    animation: moving-cloud3 18s linear infinite;;
+}
+@media screen and (max-width:772px){
+    .cloud:nth-child(2){
+        display: none;
+    }
+} 
+@media screen and (max-width:514px){
+    .cloud:nth-child(1){
+        width: 150px;
+        animation: none;
+    }
+    .cloud:nth-child(3){
+       width: 100px;
+       animation: none;
+    }
+} 
+/*  */
+
+@keyframes moving-cloud1 {
+    from{left: 0px;}
+    to{left: 100px;}
+}
+@keyframes moving-cloud2 {
+    from{left: 500px;}
+    to{left: 550px;}
+}
+
+@keyframes moving-cloud3 {
+    from{left: 300px;}
+    to{left: 350px;}
+}
+
+
+
