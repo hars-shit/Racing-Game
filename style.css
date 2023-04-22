@@ -1,0 +1,80 @@
+ /*div button{
+    width: 10vh;
+    height: 10vh;
+    cursor: pointer;
+    border: 1px solid black;
+    border-radius: 50%;
+    text-transform: uppercase;
+    transition: 1s linear; 
+}
+button:hover{
+    background-color: cadetblue;
+    color: white;
+    border:1px solid cadetblue;
+    transform: rotate(360deg);
+    
+} */
+ .game-container{
+    max-width: 200vh;
+    height: 90vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: end;
+   padding: 20px 20px;
+   flex-wrap: wrap;
+   row-gap: 0px;
+} 
+
+#road{
+    
+    width: 100%;
+    position: relative;
+   height: 40%;
+}
+
+#car2{
+    position: absolute;
+    bottom: 160px;
+    left: 35px;
+    animation-name: road-Motion1;
+    transition: 2s linear;
+    animation-fill-mode: both;
+    animation-duration: 13s;
+    animation-iteration-count:1 ;
+}
+
+#car1{
+    position: absolute;
+    bottom: 256px;
+    left: 35px;
+    animation-name: road-Motion1;
+    transition: 2s linear;
+    animation-fill-mode: both;
+    animation-duration: 11s;
+    animation-iteration-count:1 ;
+}
+@keyframes road-Motion1 {
+    from { transform: translateX(0vh);}
+    to{ transform: translateX(170vh);}
+}
+#heading{
+    /* transform: translateX(-60vh); */
+    text-align: center;
+    width: 100%;
+    font-size: 50px;
+    font-weight: 700;
+}
+#start1{
+    position: absolute;
+    bottom: 283px;
+    left: 155vh;
+    width: 10%;
+}
+#start2{
+    position: absolute;
+    z-index: 1;
+    bottom: 106px;
+    left: 155vh;
+    width: 10%;
+}
